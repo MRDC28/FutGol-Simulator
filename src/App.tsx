@@ -16,4 +16,5 @@ export default function App() {
     </div>
   );
 }
-import ContractSystem from "./components/ContractSystem";
+import ContractSystem from "./components/ContractSystem"
+<ContractSystem />
