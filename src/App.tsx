@@ -18,3 +18,5 @@ export default function App() {
 }
 import ContractSystem from "./components/ContractSystem"
 <ContractSystem />
+import NationalTeam from "./components/NationalTeam";
+<NationalTeam player={player} />
