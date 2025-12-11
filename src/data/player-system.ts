@@ -14,3 +14,10 @@ export const player = {
     ratingAvg: 0
   }
 };
+
+contract: {
+  salary: 0,
+  years: 0,
+  releaseClause: 0,
+  active: false
+},
