@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FutGol Simulator</title>
+
+<!-- React + ReactDOM via CDN -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+<!-- Babel para JSX funcionar direto no navegador -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<style>
+  body {
+    margin: 0;
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  button {
+    background: #6a00ff;
+    border: none;
+    padding: 12px 20px;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+</style>
+</head>
+
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+
+function App() {
+  const [playerName, setPlayerName] = React.useState("");
+  const [created, setCreated] = React.useState(false);
+
+  function createPlayer() {
+    if (playerName.trim() === "") return alert("Digite seu nome!");
+    setCreated(true);
+  }
+
+  return (
+    <div className="container">
+      {!created ? (
+        <>
+          <h1>FutGol Simulator ⚽</h1>
+          <p>Crie seu jogador e inicie a carreira!</p>
+          <input 
+            placeholder="Nome do jogador"
+            value={playerName}
+            onChange={(e) => setPlayerName(e.target.value)}
+            style={{padding:10, borderRadius:8, border:"none", width:"80%"}}
+          />
+          <br/>
+          <button onClick={createPlayer}>Criar Jogador</button>
+        </>
+      ) : (
+        <>
+          <h1>Bem-vindo, {playerName}!</h1>
+          <p>Seu jogo está rodando pelo GitHub Pages 💜</p>
+        </>
+      )}
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App/>);
+
+</script>
+</body>
+</html>
