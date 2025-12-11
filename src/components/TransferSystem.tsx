@@ -14,7 +14,13 @@ export default function TransferSystem() {
       `Proposta de transferência:\nTime: ${team}\nLiga: ${randomLeague}\nAceitar?`
     );
 
-    if (confirm) {
+    if (confirm) { 
+      player.contract = {
+  salary: player.ger * 12000,
+  years: 3,
+  releaseClause: player.ger * 1500000,
+  active: true
+};
       player.league = randomLeague;
       player.team = team;
       alert("Transferência concluída!");
