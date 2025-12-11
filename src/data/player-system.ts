@@ -21,3 +21,9 @@ contract: {
   releaseClause: 0,
   active: false
 },
+nationalTeam: {
+    country: "",
+    caps: 0,
+    goals: 0,
+    selected: false
+},
